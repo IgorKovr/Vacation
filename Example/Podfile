@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Vacation_Example', :exclusive => true do
+  pod 'Vacation', :path => '../'
+end
+
+target 'Vacation_Tests', :exclusive => true do
+  pod 'Vacation', :path => '../'
+
+  pod 'Specta'
+  pod 'Expecta'
+end
