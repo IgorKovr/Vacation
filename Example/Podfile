@@ -3,6 +3,8 @@ use_frameworks!
 
 target 'Vacation_Example', :exclusive => true do
   pod 'Vacation', :path => '../'
+  pod 'Mantle'                  , '~> 2.0'
+  pod 'AFNetworking'            , '~> 2.2'
 end
 
 target 'Vacation_Tests', :exclusive => true do

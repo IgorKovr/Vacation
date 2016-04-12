@@ -1,0 +1,6 @@
+framework module Vacation {
+  umbrella header "Vacation-umbrella.h"
+
+  export *
+  module * { export * }
+}
