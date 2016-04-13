@@ -12,6 +12,6 @@
 @interface NTWebService : AFHTTPRequestOperationManager
 
 + (instancetype) sharedInstance;
-+ (instancetype) setBaseURL:(NSURL *)url;
++ (instancetype) setBaseURL:(NSString *)url;
 
 @end

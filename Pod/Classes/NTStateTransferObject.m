@@ -35,9 +35,10 @@
 }
 
 + (AFHTTPRequestOperationManager *)operationManager {
-    @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                   reason:[NSString stringWithFormat:@"Need to override +operationManager in %@, cmd: %@", [self class], NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
+    return [NTWebService sharedInstance];
+//    @throw [NSException exceptionWithName:NSInvalidArgumentException
+//                                   reason:[NSString stringWithFormat:@"Need to override +operationManager in %@, cmd: %@", [self class], NSStringFromSelector(_cmd)]
+//                                 userInfo:nil];
 }
 
 - (void)handleStateTransferError:(NSError *)error {

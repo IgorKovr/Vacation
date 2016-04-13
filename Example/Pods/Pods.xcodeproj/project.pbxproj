@@ -194,6 +194,7 @@
 		D83677C54D2226C67886A525B0B46FBE /* EXPMatchers+beLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0A24924BBF18BAFC8B39DB5BF8CF4F /* EXPMatchers+beLessThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D84897F11CBD7118001C7646 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E283B05C4C326636E213564FEA8A48F1 /* Mantle.framework */; };
 		D84897F21CBD711E001C7646 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCA763F6AD1B5CC2B378CEE80340975 /* AFNetworking.framework */; };
+		D84897F61CBD733E001C7646 /* Vacation.h in Headers */ = {isa = PBXBuildFile; fileRef = D84897F51CBD733A001C7646 /* Vacation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D86913E8F8A1CA01D792A1DFD3AE671C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D646838F8BA566FB1F98B3230DA612 /* AFHTTPSessionManager.m */; };
 		DA23AB7DB845C0C1871D09A9E8755B86 /* SPTExampleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5A8210DEAFCF0640F44195C05A6D90 /* SPTExampleGroup.m */; };
 		DB30F82FB1BE083D9471B965FB500CA2 /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C74BE3C91A6B85AE22BA2EC4B7F9530 /* EXPMatchers+conformTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -488,6 +489,7 @@
 		D25102D079B852D0B8AE91101C71C27E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		D4AFF264E3039BCD335DFD9E57C983A3 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		D5AB3417C3EF409F1F10E44F98EBF9D0 /* EXPMatchers+beKindOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beKindOf.m"; path = "Expecta/Matchers/EXPMatchers+beKindOf.m"; sourceTree = "<group>"; };
+		D84897F51CBD733A001C7646 /* Vacation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vacation.h; sourceTree = "<group>"; };
 		D890F1435F437A2DDF307D048D04CBB5 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		D994FFE10FA9946248C0BCC0DB37B960 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DA9A101495A966339EC87AEFFA058780 /* NTStateTransferObject+FileUpload.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NTStateTransferObject+FileUpload.h"; sourceTree = "<group>"; };
@@ -699,6 +701,7 @@
 				D84897EF1CBD6F15001C7646 /* NTStateTransferObject */,
 				D84897EE1CBD6EEE001C7646 /* Categories */,
 				D84897ED1CBD6ED8001C7646 /* NTWebService */,
+				D84897F51CBD733A001C7646 /* Vacation.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1254,6 +1257,7 @@
 				6C4383B8B758A98F63E4BCB20203180C /* AFHTTPRequestOperationManager+MultipartformPUT.h in Headers */,
 				CD192B50F4C8ADFC51E3CB8F02CA02C9 /* FileWrapper.h in Headers */,
 				A5D82200CABBDD8512C35A57E85CF65B /* NSDictionary+NTMappingAdditions.h in Headers */,
+				D84897F61CBD733E001C7646 /* Vacation.h in Headers */,
 				3B004E9D46056D9630F3B9EFC88E50F1 /* NTStateTransferObject+Archiving.h in Headers */,
 				A84497EB7B6C2835AC2F24FC64D7EC2C /* NTStateTransferObject+CRUD.h in Headers */,
 				806B3DA31CC70D4D10100D0CEECF7815 /* NTStateTransferObject+FileUpload.h in Headers */,

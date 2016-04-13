@@ -14,7 +14,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* VCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* VCAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* VCViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -22,7 +21,12 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		68CDF36415FAF744385A9662 /* Pods_Vacation_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A3AA03B049A388F5442F0A /* Pods_Vacation_Example.framework */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D83929FD1CBEAB13008D1F11 /* VCDatastreamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83929FC1CBEAB13008D1F11 /* VCDatastreamsViewController.m */; };
+		D8392A051CBEB703008D1F11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8392A041CBEB703008D1F11 /* Main.storyboard */; };
+		D8392A0C1CBEC92A008D1F11 /* VCDataPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8392A0B1CBEC92A008D1F11 /* VCDataPointsViewController.m */; };
+		D8392A101CBECE01008D1F11 /* VCDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D8392A0F1CBECE01008D1F11 /* VCDataPoint.m */; };
+		D84897FB1CBD77ED001C7646 /* VCFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = D84897FA1CBD77ED001C7646 /* VCFeed.m */; };
+		D84897FF1CBD7A8C001C7646 /* VCDataStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D84897FE1CBD7A8C001C7646 /* VCDataStream.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +51,6 @@
 		6003F59B195388D20070C39A /* Vacation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vacation-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* VCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* VCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* VCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* VCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Vacation_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Vacation_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -56,11 +58,21 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		892D46467E4D1AE237478A54 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		92D334AE0EDFCB3011162A15 /* Pods-Vacation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation_Example/Pods-Vacation_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B6A3AA03B049A388F5442F0A /* Pods_Vacation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vacation_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B804400FB7CED5E0A52CA8C7 /* Pods-Vacation_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation_Tests/Pods-Vacation_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D83929FB1CBEAB13008D1F11 /* VCDatastreamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCDatastreamsViewController.h; sourceTree = "<group>"; };
+		D83929FC1CBEAB13008D1F11 /* VCDatastreamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCDatastreamsViewController.m; sourceTree = "<group>"; };
+		D8392A041CBEB703008D1F11 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D8392A0A1CBEC92A008D1F11 /* VCDataPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VCDataPointsViewController.h; path = Controllers/VCDataPointsViewController.h; sourceTree = "<group>"; };
+		D8392A0B1CBEC92A008D1F11 /* VCDataPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCDataPointsViewController.m; path = Controllers/VCDataPointsViewController.m; sourceTree = "<group>"; };
+		D8392A0E1CBECE01008D1F11 /* VCDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VCDataPoint.h; path = Models/VCDataPoint.h; sourceTree = "<group>"; };
+		D8392A0F1CBECE01008D1F11 /* VCDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCDataPoint.m; path = Models/VCDataPoint.m; sourceTree = "<group>"; };
+		D84897F91CBD77ED001C7646 /* VCFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VCFeed.h; path = Models/VCFeed.h; sourceTree = "<group>"; };
+		D84897FA1CBD77ED001C7646 /* VCFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCFeed.m; path = Models/VCFeed.m; sourceTree = "<group>"; };
+		D84897FD1CBD7A8C001C7646 /* VCDataStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VCDataStream.h; path = Models/VCDataStream.h; sourceTree = "<group>"; };
+		D84897FE1CBD7A8C001C7646 /* VCDataStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCDataStream.m; path = Models/VCDataStream.m; sourceTree = "<group>"; };
 		E206E5A7969C63719C5264F0 /* Pods-Vacation_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation_Tests/Pods-Vacation_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F3246EE441F296F3A2D5C6D9 /* Pods_Vacation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vacation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F963F389A5B8A75CF3CF29BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -130,11 +142,7 @@
 		6003F593195388D20070C39A /* Example for Vacation */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* VCAppDelegate.h */,
-				6003F59D195388D20070C39A /* VCAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* VCViewController.h */,
-				6003F5A6195388D20070C39A /* VCViewController.m */,
+				D84897F31CBD7197001C7646 /* Classes */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -180,6 +188,42 @@
 				F963F389A5B8A75CF3CF29BD /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		D8392A061CBEC8C9008D1F11 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D83929FB1CBEAB13008D1F11 /* VCDatastreamsViewController.h */,
+				D83929FC1CBEAB13008D1F11 /* VCDatastreamsViewController.m */,
+				D8392A0A1CBEC92A008D1F11 /* VCDataPointsViewController.h */,
+				D8392A0B1CBEC92A008D1F11 /* VCDataPointsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D84897F31CBD7197001C7646 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D8392A061CBEC8C9008D1F11 /* Controllers */,
+				D8392A041CBEB703008D1F11 /* Main.storyboard */,
+				D84897F41CBD71A3001C7646 /* Models */,
+				6003F59C195388D20070C39A /* VCAppDelegate.h */,
+				6003F59D195388D20070C39A /* VCAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D84897F41CBD71A3001C7646 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D84897F91CBD77ED001C7646 /* VCFeed.h */,
+				D84897FA1CBD77ED001C7646 /* VCFeed.m */,
+				D84897FD1CBD7A8C001C7646 /* VCDataStream.h */,
+				D84897FE1CBD7A8C001C7646 /* VCDataStream.m */,
+				D8392A0E1CBECE01008D1F11 /* VCDataPoint.h */,
+				D8392A0F1CBECE01008D1F11 /* VCDataPoint.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		DCAB6CE21E81FBE1F9FE014C /* Pods */ = {
@@ -276,7 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				D8392A051CBEB703008D1F11 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -390,9 +434,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84897FB1CBD77ED001C7646 /* VCFeed.m in Sources */,
+				D83929FD1CBEAB13008D1F11 /* VCDatastreamsViewController.m in Sources */,
 				6003F59E195388D20070C39A /* VCAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* VCViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				D8392A101CBECE01008D1F11 /* VCDataPoint.m in Sources */,
+				D8392A0C1CBEC92A008D1F11 /* VCDataPointsViewController.m in Sources */,
+				D84897FF1CBD7A8C001C7646 /* VCDataStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,6 @@
 #import <Mantle/Mantle.h>
 #import <Mantle/MTLReflection.h>
 #import "NTWebService.h"
-//#import "AFHTTPRequestOperationManager+MultipartformPUT.h"
 
 /*!
  Base class for model objects capable of automatic properties mapping and State Transfering
