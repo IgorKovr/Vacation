@@ -25,19 +25,23 @@
  models URL endpoint
  subclasses ought to override this property getter in order to support state transfering
  */
-@property (nonatomic, strong, readonly) NSString *defaultURL;
+@property (nonatomic, strong, readonly) NSString * endpointURL;
 
 /*!
- A subclass needs to implement this method in order to perform Web requests
+ A AFHTTPRequestOperationManager subclass instance for HTTP communication
+ 
+ Override this method if you want to provide custom AFHTTPRequestOperationManager subclass for HTTP operations
+ 
+ returns VCWebService instance by default
  */
 + (AFHTTPRequestOperationManager *)operationManager;
 
 /*!
  A dictionary used to map pamater names from server side with VCStateTransferObject subclas parameter names
  
- Subclasses shoud override this method if any of fetched parameter names are not the same provided from server responce
+ Subclasses should override this method if any of fetched parameter names are not equal to server parameters
  
- if nil current parameter names will be used
+ if nil - current parameter names will be used
  
  returns nil by default
  */
@@ -68,7 +72,7 @@
 - (NSArray *)filterParametersKeys;
 
 /*!
- Override this method in order to handle Error
+ Override this method if you want to to handle StateTransfer Errors
  */
 - (void)handleStateTransferError:(NSError *)error;
 

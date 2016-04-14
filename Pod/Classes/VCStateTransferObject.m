@@ -10,6 +10,10 @@
 
 @implementation VCStateTransferObject
 
++ (AFHTTPRequestOperationManager *)operationManager {
+    return [VCWebService sharedInstance];
+}
+
 + (NSDictionary *)mappingDictionary {
     return @{
              @"server_id": @"id",
@@ -26,16 +30,10 @@
     return nil;
 }
 
-#pragma mark - Abstract Methods 
-
-- (NSString *)defaultURL {
+- (NSString *)endpointURL {
     @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                   reason:[NSString stringWithFormat:@"Need to override -defaultURL in %@, cmd: %@", [self class], NSStringFromSelector(_cmd)]
+                                   reason:[NSString stringWithFormat:@"Need to override -endpointURL in %@, cmd: %@", [self class], NSStringFromSelector(_cmd)]
                                  userInfo:nil];
-}
-
-+ (AFHTTPRequestOperationManager *)operationManager {
-    return [VCWebService sharedInstance];
 }
 
 - (void)handleStateTransferError:(NSError *)error {

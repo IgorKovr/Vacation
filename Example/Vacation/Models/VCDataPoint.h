@@ -10,7 +10,7 @@
 
 @interface VCDataPoint : VCStateTransferObject
 
-@property (nonatomic, strong) NSString *at;
-@property (nonatomic, strong) NSString *value;
+@property (nonatomic, strong) NSString * at;
+@property (nonatomic, strong) NSString * value;
 
 @end

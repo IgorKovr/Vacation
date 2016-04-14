@@ -11,7 +11,7 @@
 
 @implementation VCDataStream
 
-- (NSString *)defaultURL {
+- (NSString *)endpointURL {
     NSString *endpoint = @"/v2/feeds/1799206591/datastreams/";
     return [endpoint stringByAppendingPathComponent:self.title];
 }

@@ -12,7 +12,7 @@
 @interface VCStateTransferObject (CRUD)
 
 /*!
- @abstract sends GET request for object -defaultURL. Maps returned JSON values onto the same object on which the method was called. Use this method to <b>obtain new data</b> for object.
+ @abstract sends GET request for object -endpointURL. Maps returned JSON values onto the same object on which the method was called. Use this method to <b>obtain new data</b> for object.
  @param params parameters that will be sent in json.
  @param success a block called if response code is 201(created), and received values are successfully mapped.
  @param failure a block called if any error occures. Contains error message and AFHTTPRequestOperation instance if request was made.

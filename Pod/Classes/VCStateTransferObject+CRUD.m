@@ -14,7 +14,7 @@
 - (void)getWithParams:(NSDictionary *)params
               success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    NSString *urlString = self.defaultURL;
+    NSString *urlString = self.endpointURL;
     if (self.server_id){
         urlString = [urlString stringByAppendingPathComponent:self.server_id.stringValue];
     }
@@ -36,7 +36,7 @@
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     __weak VCStateTransferObject *weakSelf = self;
-    NSString *urlString = [self.defaultURL stringByAppendingPathComponent:self.server_id.stringValue];
+    NSString *urlString = [self.endpointURL stringByAppendingPathComponent:self.server_id.stringValue];
     
     NSError *error;
     NSDictionary *allParams = [NSDictionary JSONDictionaryFromModel:self
@@ -68,7 +68,7 @@
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     __weak VCStateTransferObject *weakSelf = self;
-    NSString *urlString = self.defaultURL;
+    NSString *urlString = self.endpointURL;
     
     if (weakSelf.server_id)
         @throw [NSException exceptionWithName:NSInvalidArgumentException
@@ -101,7 +101,7 @@
 - (void)deleteSuccess:(void (^)(AFHTTPRequestOperation *, id))success
               failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
-    NSString *urlString = self.defaultURL;
+    NSString *urlString = self.endpointURL;
     if (self.server_id){
         urlString = [urlString stringByAppendingPathComponent:self.server_id.stringValue];
     }

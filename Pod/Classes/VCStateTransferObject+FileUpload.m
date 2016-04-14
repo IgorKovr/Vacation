@@ -46,7 +46,7 @@ static int TIME_OUT_INTERVAL = 800;
     
     id constructingBodyBlock = [self multipartFormConstructionBlockWithArayOfFiles:arrayOfFiles forKey:key failureBlock:failure];
     
-    NSString *url = [NSString stringWithFormat:@"%@/%@",[self manager].baseURL, self.defaultURL];
+    NSString *url = [NSString stringWithFormat:@"%@/%@",[self manager].baseURL, self.endpointURL];
     
     NSError *error;
     NSURLRequest *request = [[self manager].requestSerializer multipartFormRequestWithMethod:method

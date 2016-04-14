@@ -10,11 +10,11 @@
 
 @interface VCDataStream : VCStateTransferObject
 
-@property (nonatomic, strong) NSString *current_value;
-@property (nonatomic, strong) NSString *at;
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *max_value;
-@property (nonatomic, strong) NSString *min_value;
-@property (nonatomic, strong) NSArray  *datapoints;
+@property (nonatomic, strong) NSString * current_value;
+@property (nonatomic, strong) NSString * at;
+@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString * max_value;
+@property (nonatomic, strong) NSString * min_value;
+@property (nonatomic, strong) NSArray  * datapoints;
 
 @end

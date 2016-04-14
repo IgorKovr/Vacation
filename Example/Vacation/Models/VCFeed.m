@@ -15,7 +15,7 @@
     return @{@"feed_description" : @"description"};
 }
 
-- (NSString *)defaultURL {
+- (NSString *)endpointURL {
    return @"/v2/feeds";
 }
 
