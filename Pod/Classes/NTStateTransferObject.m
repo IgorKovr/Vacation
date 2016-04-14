@@ -3,7 +3,7 @@
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/6/16.
-//  Copyright © 2016 RAWR. All rights reserved.
+//  Copyright © 2016 Igor Kovryzhkin. All rights reserved.
 //
 
 #import "NTStateTransferObject.h"
@@ -36,9 +36,6 @@
 
 + (AFHTTPRequestOperationManager *)operationManager {
     return [NTWebService sharedInstance];
-//    @throw [NSException exceptionWithName:NSInvalidArgumentException
-//                                   reason:[NSString stringWithFormat:@"Need to override +operationManager in %@, cmd: %@", [self class], NSStringFromSelector(_cmd)]
-//                                 userInfo:nil];
 }
 
 - (void)handleStateTransferError:(NSError *)error {

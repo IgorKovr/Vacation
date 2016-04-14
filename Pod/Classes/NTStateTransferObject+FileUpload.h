@@ -3,7 +3,7 @@
 //  PetPhone
 //
 //  Created by IgorK on 11/11/15.
-//  Copyright © 2015 RAWR. All rights reserved.
+//  Copyright © 2015 Igor Kovryzhkin. All rights reserved.
 //
 
 #import "NTStateTransferObject.h"

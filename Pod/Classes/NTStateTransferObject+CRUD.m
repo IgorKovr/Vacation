@@ -3,7 +3,7 @@
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/7/16.
-//  Copyright © 2016 RAWR. All rights reserved.
+//  Copyright © 2016 Igor Kovryzhkin. All rights reserved.
 //
 
 #import "NTStateTransferObject+CRUD.h"
@@ -35,10 +35,6 @@
 - (void)updateWithParams:(NSDictionary *)params
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    //    if (!self.server_id){
-    //        failure(nil, [NSError errorWithDomain:@"local" code:-1 userInfo:@{NSLocalizedDescriptionKey: @" is nil"}]);
-    //        return;
-    //    }
     __weak NTStateTransferObject *weakSelf = self;
     NSString *urlString = [self.defaultURL stringByAppendingPathComponent:self.server_id.stringValue];
     
@@ -109,12 +105,6 @@
     if (self.server_id){
         urlString = [urlString stringByAppendingPathComponent:self.server_id.stringValue];
     }
-    //    else {
-    //        @throw [NSException exceptionWithName:NSInvalidArgumentException
-    //                                       reason:[NSString stringWithFormat:@"Tried to delete object of class %@, with sererID = nil", self.class]
-    //                                     userInfo:nil];
-    //
-    //    }
     [[self.class operationManager] DELETE:urlString parameters:nil success:success failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         if (failure) {
             failure(operation, error);

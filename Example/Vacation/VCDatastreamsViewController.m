@@ -11,7 +11,7 @@
 #import "VCDataStream.h"
 #import "VCDataPointsViewController.h"
 
-const NSString *segueIdentifier = @"selectedDataStreem";
+NSString * const segueIdentifier = @"selectedDataStreem";
 
 @interface VCDatastreamsViewController ()
 

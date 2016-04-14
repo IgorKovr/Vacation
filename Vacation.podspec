@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 #  s.description  = <<-DESC
 #                   DESC
 
- s.homepage     = "https://github.com/IgorKovr/NTStateTransferObject"
+ s.homepage     = "https://github.com/IgorKovr/Vacation"
 # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -70,7 +70,7 @@ s.ios.deployment_target = '8.0'
 #  Supports git, hg, bzr, svn and HTTP.
 #
 
-s.source       = { :git => "https://github.com/IgorKovr/NTStateTransferObject.git", :tag => "#{s.version}" }
+s.source       = { :git => "https://github.com/IgorKovr/Vacation.git", :tag => "#{s.version}" }
 
 
 # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
