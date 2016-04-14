@@ -1,14 +1,14 @@
 //
-//  NTStateTransferObject.m
+//  VCStateTransferObject.m
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/6/16.
 //  Copyright © 2016 Igor Kovryzhkin. All rights reserved.
 //
 
-#import "NTStateTransferObject.h"
+#import "VCStateTransferObject.h"
 
-@implementation NTStateTransferObject
+@implementation VCStateTransferObject
 
 + (NSDictionary *)mappingDictionary {
     return @{
@@ -35,7 +35,7 @@
 }
 
 + (AFHTTPRequestOperationManager *)operationManager {
-    return [NTWebService sharedInstance];
+    return [VCWebService sharedInstance];
 }
 
 - (void)handleStateTransferError:(NSError *)error {
@@ -56,7 +56,7 @@
     return keyPathsByPropertyKey;
 }
 
-#pragma mark Merging parameters from two NTStateTransferObjects
+#pragma mark Merging parameters from two VCStateTransferObjects
 
 /*!
  @abstract overrides MTLModel -mergeValueForKey to ignore nill values from the incomming model

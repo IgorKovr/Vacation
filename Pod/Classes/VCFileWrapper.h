@@ -1,5 +1,5 @@
 //
-//  FileWrapper.h
+//  VCFileWrapper.h
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/11/16.
@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, FileType) {
     FileTypeVideo,
 };
 
-@interface FileWrapper : NSObject
+@interface VCFileWrapper : NSObject
 
 @property (nonatomic, strong) NSString *filePath;
 @property (nonatomic, strong) NSString *fileName;

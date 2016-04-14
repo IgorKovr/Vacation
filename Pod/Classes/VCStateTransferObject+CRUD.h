@@ -1,15 +1,15 @@
 //
-//  NTStateTransferObject+CRUD.h
+//  VCStateTransferObject+CRUD.h
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/7/16.
 //  Copyright © 2016 Igor Kovryzhkin. All rights reserved.
 //
 
-#import "NTStateTransferObject.h"
+#import "VCStateTransferObject.h"
 #import <AFNetworking/AFNetworking.h>
 
-@interface NTStateTransferObject (CRUD)
+@interface VCStateTransferObject (CRUD)
 
 /*!
  @abstract sends GET request for object -defaultURL. Maps returned JSON values onto the same object on which the method was called. Use this method to <b>obtain new data</b> for object.

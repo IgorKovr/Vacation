@@ -14,12 +14,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [NTWebService setBaseURL:@"https://api.xively.com/"];
+    [VCWebService setBaseURL:@"https://api.xively.com/"];
     
-    [NTWebService sharedInstance].securityPolicy.allowInvalidCertificates = YES;
-    [NTWebService sharedInstance].securityPolicy.validatesDomainName = NO;
+    [VCWebService sharedInstance].securityPolicy.allowInvalidCertificates = YES;
+    [VCWebService sharedInstance].securityPolicy.validatesDomainName = NO;
     
-    [[NTWebService sharedInstance].requestSerializer setValue:@"vqA5aaDchjEBnPBENb3X4ufUXjo7eq19HsW7OqzoQmzrFeah"
+    [[VCWebService sharedInstance].requestSerializer setValue:@"vqA5aaDchjEBnPBENb3X4ufUXjo7eq19HsW7OqzoQmzrFeah"
                                            forHTTPHeaderField:@"X-ApiKey"];
     
     return YES;

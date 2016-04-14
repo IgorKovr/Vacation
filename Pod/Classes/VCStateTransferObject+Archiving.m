@@ -1,17 +1,17 @@
 //
-//  NTStateTransferObject+Archiving.m
+//  VCStateTransferObject+Archiving.m
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/6/16.
 //  Copyright © 2016 Igor Kovryzhkin. All rights reserved.
 //
 
-#import "NTStateTransferObject+Archiving.h"
+#import "VCStateTransferObject+Archiving.h"
 
 // Used in archives to store the modelVersion of the archived instance.
 static NSString * const MTLModelVersionKey = @"MTLModelVersion";
 
-@implementation NTStateTransferObject (Archiving)
+@implementation VCStateTransferObject (Archiving)
 
 #pragma mark - Archiving
 
@@ -25,12 +25,12 @@ static NSString * const MTLModelVersionKey = @"MTLModelVersion";
     return result;
 }
 
-+ (NTStateTransferObject *) unarchiveFromFile:(NSString *)archivePath {
++ (VCStateTransferObject *) unarchiveFromFile:(NSString *)archivePath {
     NSData *archiveData = [[NSData alloc] initWithContentsOfFile:archivePath];
     if (!archiveData)
         return nil;
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:archiveData];
-    NTStateTransferObject *model;
+    VCStateTransferObject *model;
     if (![unarchiver containsValueForKey:@"root"]) {
         model = [[[self class] alloc] initWithCoder:unarchiver];
     } else {

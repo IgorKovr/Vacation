@@ -11,10 +11,10 @@
 #ifndef Vacation_h
 #define Vacation_h
 
-    #import "NTWebService.h"
+    #import "VCWebService.h"
     #import "AFHTTPRequestOperationManager+MultipartformPUT.h"
-    #import "NTStateTransferObject.h"
-    #import "NTStateTransferObject+CRUD.h"
+    #import "VCStateTransferObject.h"
+    #import "VCStateTransferObject+CRUD.h"
 
 
 #endif /* Vacation_h */

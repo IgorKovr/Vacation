@@ -1,5 +1,5 @@
 //
-//  NTStateTransferObject.h
+//  VCStateTransferObject.h
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/6/16.
@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 #import <Mantle/MTLReflection.h>
-#import "NTWebService.h"
+#import "VCWebService.h"
 
 /*!
  Base class for model objects capable of automatic properties mapping and State Transfering
  */
 
-@interface NTStateTransferObject : MTLModel <MTLJSONSerializing>
+@interface VCStateTransferObject : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber * server_id;
 @property (nonatomic, strong) NSDate   * updated_at;
@@ -33,7 +33,7 @@
 + (AFHTTPRequestOperationManager *)operationManager;
 
 /*!
- A dictionary used to map pamater names from server side with NTStateTransferObject subclas parameter names
+ A dictionary used to map pamater names from server side with VCStateTransferObject subclas parameter names
  
  Subclasses shoud override this method if any of fetched parameter names are not the same provided from server responce
  

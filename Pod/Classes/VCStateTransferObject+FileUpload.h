@@ -6,20 +6,20 @@
 //  Copyright © 2015 Igor Kovryzhkin. All rights reserved.
 //
 
-#import "NTStateTransferObject.h"
+#import "VCStateTransferObject.h"
 
-@interface NTStateTransferObject (FileUpload)
+@interface VCStateTransferObject (FileUpload)
 
 /*!
  @abstract Uploads model via POST
  @params key key that will represent file in json
  @params params additional parameters dictionary
  */
-- (void)uploadWithFile:(FileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (void)uploadWithFile:(VCFileWrapper *)VCFileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 /*!
  @abstract Uploads model via POST
- @params arrayOfFiles aray of FileWrapper objects
+ @params arrayOfFiles aray of VCFileWrapper objects
  @params key that will represent file array in json
  @params params additional parameters dictionary
  */
@@ -27,7 +27,7 @@
 
 /*!
  @abstract Updates model state via PUT
- @params arrayOfFiles aray of FileWrapper objects
+ @params arrayOfFiles aray of VCFileWrapper objects
  @params key that will represent file array in json
  @params params additional parameters dictionary
  */

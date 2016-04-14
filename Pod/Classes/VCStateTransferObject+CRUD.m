@@ -1,15 +1,15 @@
 //
-//  NTStateTransferObject+CRUD.m
+//  VCStateTransferObject+CRUD.m
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/7/16.
 //  Copyright © 2016 Igor Kovryzhkin. All rights reserved.
 //
 
-#import "NTStateTransferObject+CRUD.h"
+#import "VCStateTransferObject+CRUD.h"
 #import "NSDictionary+NTMappingAdditions.h"
 
-@implementation NTStateTransferObject (CRUD)
+@implementation VCStateTransferObject (CRUD)
 
 - (void)getWithParams:(NSDictionary *)params
               success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
@@ -18,10 +18,10 @@
     if (self.server_id){
         urlString = [urlString stringByAppendingPathComponent:self.server_id.stringValue];
     }
-    __weak NTStateTransferObject *weakSelf = self;
+    __weak VCStateTransferObject *weakSelf = self;
     [[self.class operationManager] GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
-        NTStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
+        VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
         if (!object){
             failure(operation, error);
             [self handleStateTransferError:error];
@@ -35,7 +35,7 @@
 - (void)updateWithParams:(NSDictionary *)params
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    __weak NTStateTransferObject *weakSelf = self;
+    __weak VCStateTransferObject *weakSelf = self;
     NSString *urlString = [self.defaultURL stringByAppendingPathComponent:self.server_id.stringValue];
     
     NSError *error;
@@ -52,7 +52,7 @@
     
     [[self.class operationManager] PUT:urlString parameters:allParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
-        NTStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
+        VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
         if (!object) {
             if (failure) {
                 failure(operation, error);
@@ -67,7 +67,7 @@
 - (void)createWithParams:(NSDictionary *)params
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    __weak NTStateTransferObject *weakSelf = self;
+    __weak VCStateTransferObject *weakSelf = self;
     NSString *urlString = self.defaultURL;
     
     if (weakSelf.server_id)
@@ -88,7 +88,7 @@
     }
     [[self.class operationManager] POST:urlString parameters:[allParams copy] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
-        NTStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
+        VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
         if (!object){
             failure(operation, error);
             [self handleStateTransferError:error];

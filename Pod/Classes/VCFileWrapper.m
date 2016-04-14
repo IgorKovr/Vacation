@@ -1,13 +1,13 @@
 //
-//  FileWrapper.m
+//  VCFileWrapper.m
 //  PetPhone
 //
 //  Created by Igor Kovryzhkin on 4/11/16.
 //  Copyright © 2016 Igor Kovryzhkin. All rights reserved.
 //
 
-#import "FileWrapper.h"
+#import "VCFileWrapper.h"
 
-@implementation FileWrapper
+@implementation VCFileWrapper
 
 @end

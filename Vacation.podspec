@@ -92,7 +92,7 @@ s.source       = { :git => "https://github.com/IgorKovr/Vacation.git", :tag => "
 #    s.exclude_files = "Classes/Exclude"
 
 # 9
-#  s.resources = "NTStateTransferObject/**/*.{png,jpeg,jpg,storyboard,xib}"
+#  s.resources = "VCStateTransferObject/**/*.{png,jpeg,jpg,storyboard,xib}"
 
 # s.public_header_files = "Classes/**/*.h"
 

@@ -8,7 +8,7 @@
 
 #import "Vacation.h"
 
-@interface VCDataStream : NTStateTransferObject
+@interface VCDataStream : VCStateTransferObject
 
 @property (nonatomic, strong) NSString *current_value;
 @property (nonatomic, strong) NSString *at;

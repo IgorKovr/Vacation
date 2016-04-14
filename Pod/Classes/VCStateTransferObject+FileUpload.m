@@ -6,23 +6,23 @@
 //  Copyright © 2015 Igor Kovryzhkin. All rights reserved.
 //
 
-#import "NTStateTransferObject+FileUpload.h"
+#import "VCStateTransferObject+FileUpload.h"
 #import "NSDictionary+NTMappingAdditions.h"
 
 static int TIME_OUT_INTERVAL = 800;
 
-@implementation NTStateTransferObject (FileUpload)
+@implementation VCStateTransferObject (FileUpload)
 
-- (void)uploadWithFile:(FileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+- (void)uploadWithFile:(VCFileWrapper *)VCFileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     NSArray *filesArray = nil;
-    if (fileWrapper)
-        filesArray = @[fileWrapper];
+    if (VCFileWrapper)
+        filesArray = @[VCFileWrapper];
     [self requestMethod:@"POST" WithArrayOfFiles:filesArray forKey:key params:params success:success failure:failure];
 }
 
 /*!
  @abstract Uploads model via POST
- @params arrayOfFiles aray of FileWrapper objects
+ @params arrayOfFiles aray of VCFileWrapper objects
  @params key that will represent file array in json
  @params params additional parameters dictionary
  */
@@ -32,7 +32,7 @@ static int TIME_OUT_INTERVAL = 800;
 
 /*!
  @abstract Updates model state via PUT
- @params arrayOfFiles aray of FileWrapper objects
+ @params arrayOfFiles aray of VCFileWrapper objects
  @params key that will represent file array in json
  @params params additional parameters dictionary
  */
@@ -71,9 +71,9 @@ static int TIME_OUT_INTERVAL = 800;
     id block = ^(id<AFMultipartFormData> formData) {
         int i = 0;
         // form mimeType
-        for (FileWrapper *fileWrapper in arrayOfFiles) {
+        for (VCFileWrapper *VCFileWrapper in arrayOfFiles) {
             NSString *mimeType = nil;
-            switch (fileWrapper.fileType) {
+            switch (VCFileWrapper.fileType) {
                 case FileTypePhoto:
                     mimeType = @"image/jpeg";
                     break;
@@ -89,14 +89,14 @@ static int TIME_OUT_INTERVAL = 800;
                 // add array specificator if more than one file
                 imageName = [imageName stringByAppendingString: [NSString stringWithFormat:@"[%d]",i++]];
             // specify file name if not presented
-            if (!fileWrapper.fileName)
-                fileWrapper.fileName  = [NSString stringWithFormat:@"image_%d.jpg",i];
+            if (!VCFileWrapper.fileName)
+                VCFileWrapper.fileName  = [NSString stringWithFormat:@"image_%d.jpg",i];
             NSError *error = nil;
             
             // Make the magic happen
-            [formData appendPartWithFileURL:[NSURL fileURLWithPath:fileWrapper.filePath]
+            [formData appendPartWithFileURL:[NSURL fileURLWithPath:VCFileWrapper.filePath]
                                        name:imageName
-                                   fileName:fileWrapper.fileName
+                                   fileName:VCFileWrapper.fileName
                                    mimeType:mimeType
                                       error:&error];
             if (error) {
@@ -113,12 +113,12 @@ static int TIME_OUT_INTERVAL = 800;
 
 - (void (^)(AFHTTPRequestOperation *operation, id responseObject))operationSuccessHandlerWithBlock:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     // Take weak Self
-    __weak NTStateTransferObject *weakSelf = self;
+    __weak VCStateTransferObject *weakSelf = self;
     // Generate Success Block
     id successHandler = ^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
         // Create & Map New NT Object
-        NTStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
+        VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
         if (!object){
             // Call failure block mapping fails
             failure(operation, error);
@@ -158,7 +158,7 @@ static int TIME_OUT_INTERVAL = 800;
 #pragma mark - operation manager
 
 - (AFHTTPRequestOperationManager *)manager {
-    AFHTTPRequestOperationManager *manager =  [[NTWebService sharedInstance] copy];
+    AFHTTPRequestOperationManager *manager =  [[VCWebService sharedInstance] copy];
     // Additional timeout to upload fat files
     manager.requestSerializer.timeoutInterval = TIME_OUT_INTERVAL;
     return manager;

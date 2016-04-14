@@ -9,7 +9,7 @@
 #import "Vacation.h"
 #import <Foundation/Foundation.h>
 
-@interface VCFeed : NTStateTransferObject
+@interface VCFeed : VCStateTransferObject
 
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, assign) BOOL private;

@@ -1,5 +1,5 @@
 //
-//  NTWebService.m
+//  VCWebService.m
 //  Antresol
 //
 //  Created by Igor Kovrizhkin on 3/21/14.
@@ -7,18 +7,18 @@
 //
 
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
-#import "NTWebService.h"
+#import "VCWebService.h"
 
-@implementation NTWebService
+@implementation VCWebService
 
 #pragma mark - Allocators
 
-static NTWebService* sharedInstance = nil;
+static VCWebService* sharedInstance = nil;
 static dispatch_once_t oncePredicate;
 
 + (instancetype)sharedInstance {
     dispatch_once(&oncePredicate, ^{
-        sharedInstance = [[NTWebService alloc] initWithBaseURL:nil];
+        sharedInstance = [[VCWebService alloc] initWithBaseURL:nil];
     });
     return sharedInstance;
 }
@@ -26,7 +26,7 @@ static dispatch_once_t oncePredicate;
 + (instancetype)setBaseURL:(NSString *)url {
     dispatch_once(&oncePredicate, ^{
         NSURL *baseUrl = [NSURL URLWithString:url];
-        sharedInstance = [[NTWebService alloc] initWithBaseURL:baseUrl];
+        sharedInstance = [[VCWebService alloc] initWithBaseURL:baseUrl];
     });
     return sharedInstance;
 }

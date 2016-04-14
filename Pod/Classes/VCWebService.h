@@ -1,5 +1,5 @@
 //
-//  NTWebService.h
+//  VCWebService.h
 //  Antresol
 //
 //  Created by Igor Kovrizhkin on 3/21/14.
@@ -7,9 +7,9 @@
 //
 
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import "FileWrapper.h"
+#import "VCFileWrapper.h"
 
-@interface NTWebService : AFHTTPRequestOperationManager
+@interface VCWebService : AFHTTPRequestOperationManager
 
 + (instancetype) sharedInstance;
 + (instancetype) setBaseURL:(NSString *)url;
