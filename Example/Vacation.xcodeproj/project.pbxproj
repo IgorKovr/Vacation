@@ -564,7 +564,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vacation/Vacation-Prefix.pch";
 				INFOPLIST_FILE = "Vacation/Vacation-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -581,7 +581,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vacation/Vacation-Prefix.pch";
 				INFOPLIST_FILE = "Vacation/Vacation-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
