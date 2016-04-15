@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Vacation"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary      = "An easy to use Model State Transfer Framework for iOS"
 
 # This description is used to generate tags and improve search results.
@@ -55,7 +55,7 @@ s.author             = { "IgorK" => "IgorKovr@gmail.com" }
 #
 
 s.platform     = :ios
-s.ios.deployment_target = '7.1'
+s.ios.deployment_target = '8.0'
 
 #  When using multiple platforms
 # s.ios.deployment_target = "5.0"
