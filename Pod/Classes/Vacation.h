@@ -12,9 +12,10 @@
 #define Vacation_h
 
     #import "VCWebService.h"
-    #import "AFHTTPRequestOperationManager+MultipartformPUT.h"
     #import "VCStateTransferObject.h"
     #import "VCStateTransferObject+CRUD.h"
+    #import "AFHTTPRequestOperationManager+MultipartformPUT.h"
+    #import "VCStateTransferObject+FileUpload.h"
 
 
 #endif /* Vacation_h */

@@ -13,31 +13,26 @@ static int TIME_OUT_INTERVAL = 800;
 
 @implementation VCStateTransferObject (FileUpload)
 
-- (void)uploadWithFile:(VCFileWrapper *)VCFileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+- (void)uploadWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     NSArray *filesArray = nil;
-    if (VCFileWrapper)
-        filesArray = @[VCFileWrapper];
+    if (fileWrapper)
+        filesArray = @[fileWrapper];
     [self requestMethod:@"POST" WithArrayOfFiles:filesArray forKey:key params:params success:success failure:failure];
 }
 
-/*!
- @abstract Uploads model via POST
- @params arrayOfFiles aray of VCFileWrapper objects
- @params key that will represent file array in json
- @params params additional parameters dictionary
- */
 - (void)uploadWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     [self requestMethod:@"POST" WithArrayOfFiles:arrayOfFiles forKey:key params:params success:success failure:failure];
 }
 
-/*!
- @abstract Updates model state via PUT
- @params arrayOfFiles aray of VCFileWrapper objects
- @params key that will represent file array in json
- @params params additional parameters dictionary
- */
 - (void)updateWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
     [self requestMethod:@"PUT" WithArrayOfFiles:arrayOfFiles forKey:key params:params success:success failure:failure];
+}
+
+- (void)updateWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+    NSArray *filesArray = nil;
+    if (fileWrapper)
+        filesArray = @[fileWrapper];
+    [self requestMethod:@"PUT" WithArrayOfFiles:filesArray forKey:key params:params success:success failure:failure];
 }
 
 #pragma mark - Private
