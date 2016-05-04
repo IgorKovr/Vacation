@@ -13,4 +13,6 @@
 
 + (NSDictionary *)JSONDictionaryFromModel:(id<MTLJSONSerializing>)model additionalParams:(NSDictionary *)params removeNULL:(BOOL)removeNULL error:(NSError *)error;
 
+- (NSDictionary *)removeNULLFromDictionary;
+
 @end
