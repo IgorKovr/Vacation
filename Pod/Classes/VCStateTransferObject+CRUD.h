@@ -43,7 +43,6 @@
 
 /*!
  @abstract sends DELETE request. Use this method to <b>delete</b> the object representation on the server.
- @param params additional parameters that will be sent in json.
  @param success a block, called if response code is 204(no content).
  @param failure a block, called if any error occures. Contains error message and AFHTTPRequestOperation instance if request was made.
  */
