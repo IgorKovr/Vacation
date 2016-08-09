@@ -21,11 +21,13 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Expecta (1.0.5)
-  - Mantle (2.0.6):
-    - Mantle/extobjc (= 2.0.6)
-  - Mantle/extobjc (2.0.6)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
   - Specta (1.0.5)
-  - Vacation (0.1.0)
+  - Vacation (0.1.4):
+    - AFNetworking (~> 2.2)
+    - Mantle (~> 2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2)
@@ -41,8 +43,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  Mantle: 299966b00759634931699f69cb6a30b9239b944d
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
-  Vacation: 507fa415add9ad5adbf181728a058516968dc196
+  Vacation: 108f28a2d61d84563b3f062fd95334889e601d2c
 
 COCOAPODS: 0.39.0

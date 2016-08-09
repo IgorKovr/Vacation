@@ -8,6 +8,7 @@
 
 #import "VCStateTransferObject+CRUD.h"
 #import "NSDictionary+NTMappingAdditions.h"
+#import "MTLJSONAdapter+NTMappingAdditions.h"
 
 @implementation VCStateTransferObject (CRUD)
 
@@ -39,7 +40,7 @@
     NSString *urlString = [self.endpointURL stringByAppendingPathComponent:self.server_id.stringValue];
     
     NSError *error;
-    NSDictionary *allParams = [NSDictionary JSONDictionaryFromModel:self
+    NSDictionary *allParams = [MTLJSONAdapter JSONDictionaryFromModel:self
                                                    additionalParams:params
                                                          removeNULL:YES
                                                               error:error];
@@ -76,7 +77,7 @@
                                      userInfo:nil];
     
     NSError *error;
-    NSDictionary *allParams = [NSDictionary JSONDictionaryFromModel:self
+    NSDictionary *allParams = [MTLJSONAdapter JSONDictionaryFromModel:self
                                                    additionalParams:params
                                                          removeNULL:YES
                                                               error:error];

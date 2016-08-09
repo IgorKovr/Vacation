@@ -84,11 +84,15 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Vacation_Tests/AFNetworking.framework"
+  install_framework "Pods-Vacation_Tests/Mantle.framework"
   install_framework "Pods-Vacation_Tests/Vacation.framework"
   install_framework "Pods-Vacation_Tests/Expecta.framework"
   install_framework "Pods-Vacation_Tests/Specta.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Vacation_Tests/AFNetworking.framework"
+  install_framework "Pods-Vacation_Tests/Mantle.framework"
   install_framework "Pods-Vacation_Tests/Vacation.framework"
   install_framework "Pods-Vacation_Tests/Expecta.framework"
   install_framework "Pods-Vacation_Tests/Specta.framework"

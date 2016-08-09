@@ -1,8 +1,10 @@
 #import <UIKit/UIKit.h>
 
 #import "AFHTTPRequestOperationManager+MultipartformPUT.h"
-#import "VCFileWrapper.h"
+#import "MTLJSONAdapter+NTMappingAdditions.h"
 #import "NSDictionary+NTMappingAdditions.h"
+#import "Vacation.h"
+#import "VCFileWrapper.h"
 #import "VCStateTransferObject+Archiving.h"
 #import "VCStateTransferObject+CRUD.h"
 #import "VCStateTransferObject+FileUpload.h"

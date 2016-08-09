@@ -1,25 +1,32 @@
 {
   "name": "Vacation",
-  "version": "0.1.0",
-  "summary": "A short description of Vacation.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Vacation",
-  "license": "MIT",
+  "version": "0.1.4",
+  "summary": "An easy to use Model State Transfer Framework for iOS",
+  "homepage": "https://github.com/IgorKovr/Vacation",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
   "authors": {
     "IgorK": "IgorKovr@gmail.com"
   },
-  "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Vacation.git",
-    "tag": "0.1.0"
-  },
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
-  "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "Vacation": [
-      "Pod/Assets/*.png"
+  "source": {
+    "git": "https://github.com/IgorKovr/Vacation.git",
+    "tag": "0.1.4"
+  },
+  "source_files": [
+    "Classes",
+    "Pod/Classes/**/*.{h,m}"
+  ],
+  "dependencies": {
+    "Mantle": [
+      "~> 2.0"
+    ],
+    "AFNetworking": [
+      "~> 2.2"
     ]
   }
 }
