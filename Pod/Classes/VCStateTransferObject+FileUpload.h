@@ -16,7 +16,7 @@
  @params key key that will represent file in json
  @params params additional parameters dictionary
  */
-- (void)uploadWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (AFHTTPRequestOperation *)uploadWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 /*!
  @abstract Uploads model via POST
@@ -24,7 +24,7 @@
  @params key that will represent file array in json
  @params params additional parameters dictionary
  */
-- (void)uploadWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (AFHTTPRequestOperation *)uploadWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 /*!
  @abstract Updates model state via PUT
@@ -32,7 +32,7 @@
  @params key that will represent file array in json
  @params params additional parameters dictionary
  */
-- (void)updateWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (AFHTTPRequestOperation *)updateWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 /*!
  @abstract Updates model state via PUT
@@ -40,6 +40,6 @@
  @params key that will represent file array in json
  @params params additional parameters dictionary
  */
-- (void)updateWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (AFHTTPRequestOperation *)updateWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 @end

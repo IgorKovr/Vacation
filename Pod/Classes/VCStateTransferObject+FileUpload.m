@@ -13,35 +13,37 @@ static int TIME_OUT_INTERVAL = 800;
 
 @implementation VCStateTransferObject (FileUpload)
 
-- (void)uploadWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+- (AFHTTPRequestOperation *)uploadWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     NSArray *filesArray = nil;
     if (fileWrapper)
         filesArray = @[fileWrapper];
-    [self requestMethod:@"POST" WithArrayOfFiles:filesArray forKey:key params:params success:success failure:failure];
+    return [self requestMethod:@"POST" WithArrayOfFiles:filesArray forKey:key params:params success:success failure:failure];
 }
 
-- (void)uploadWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    [self requestMethod:@"POST" WithArrayOfFiles:arrayOfFiles forKey:key params:params success:success failure:failure];
+- (AFHTTPRequestOperation *)uploadWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    return [self requestMethod:@"POST" WithArrayOfFiles:arrayOfFiles forKey:key params:params success:success failure:failure];
 }
 
-- (void)updateWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
-    [self requestMethod:@"PUT" WithArrayOfFiles:arrayOfFiles forKey:key params:params success:success failure:failure];
+- (AFHTTPRequestOperation *)updateWithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+    return [self requestMethod:@"PUT" WithArrayOfFiles:arrayOfFiles forKey:key params:params success:success failure:failure];
 }
 
-- (void)updateWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+- (AFHTTPRequestOperation *)updateWithFile:(VCFileWrapper *)fileWrapper forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
     NSArray *filesArray = nil;
     if (fileWrapper)
         filesArray = @[fileWrapper];
-    [self requestMethod:@"PUT" WithArrayOfFiles:filesArray forKey:key params:params success:success failure:failure];
+    return [self requestMethod:@"PUT" WithArrayOfFiles:filesArray forKey:key params:params success:success failure:failure];
 }
 
 #pragma mark - Private
 
-- (void)requestMethod:(NSString *)method WithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+- (AFHTTPRequestOperation *)requestMethod:(NSString *)method WithArrayOfFiles:(NSArray *)arrayOfFiles forKey:(NSString *)key params:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
     id constructingBodyBlock = [self multipartFormConstructionBlockWithArayOfFiles:arrayOfFiles forKey:key failureBlock:failure];
     
     NSString *url = [NSString stringWithFormat:@"%@/%@",[self manager].baseURL, self.endpointURL];
+    if (self.server_id)
+        url = [NSString stringWithFormat:@"%@/%@", url, self.server_id];
     
     NSError *error;
     NSURLRequest *request = [[self manager].requestSerializer multipartFormRequestWithMethod:method
@@ -58,6 +60,7 @@ static int TIME_OUT_INTERVAL = 800;
                                                                                 success:[self operationSuccessHandlerWithBlock:success failure:failure]
                                                                          failure:[self operationFailureHandlerWithBlock:failure]];
     [[self manager].operationQueue addOperation:operation];
+    return operation;
 } 
 
 #pragma mark multipartForm constructionBlock

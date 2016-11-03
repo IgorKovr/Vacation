@@ -16,6 +16,7 @@
     #import "VCStateTransferObject+CRUD.h"
     #import "AFHTTPRequestOperationManager+MultipartformPUT.h"
     #import "VCStateTransferObject+FileUpload.h"
+    #import <AFNetworking/AFNetworking.h>
 
 
 #endif /* Vacation_h */

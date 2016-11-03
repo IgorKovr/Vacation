@@ -12,7 +12,7 @@
 
 @implementation VCStateTransferObject (CRUD)
 
-- (void)getWithParams:(NSDictionary *)params
+- (AFHTTPRequestOperation *)getWithParams:(NSDictionary *)params
               success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     NSString *urlString = self.endpointURL;
@@ -20,7 +20,7 @@
         urlString = [urlString stringByAppendingPathComponent:self.server_id.stringValue];
     }
     __weak VCStateTransferObject *weakSelf = self;
-    [[self.class operationManager] GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    return [[self.class operationManager] GET:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
         VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
         if (!object){
@@ -33,7 +33,7 @@
     } failure:failure];
 }
 
-- (void)updateWithParams:(NSDictionary *)params
+- (AFHTTPRequestOperation *)updateWithParams:(NSDictionary *)params
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     __weak VCStateTransferObject *weakSelf = self;
@@ -51,7 +51,7 @@
         [self handleStateTransferError:error];
     }
     
-    [[self.class operationManager] PUT:urlString parameters:allParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    return [[self.class operationManager] PUT:urlString parameters:allParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
         VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
         if (!object) {
@@ -65,7 +65,7 @@
     } failure:failure];
 }
 
-- (void)createWithParams:(NSDictionary *)params
+- (AFHTTPRequestOperation *)createWithParams:(NSDictionary *)params
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     __weak VCStateTransferObject *weakSelf = self;
@@ -87,7 +87,7 @@
         }
         [self handleStateTransferError:error];
     }
-    [[self.class operationManager] POST:urlString parameters:[allParams copy] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    return [[self.class operationManager] POST:urlString parameters:[allParams copy] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
         VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
         if (!object){
@@ -99,14 +99,14 @@
     } failure:failure];
 }
 
-- (void)deleteSuccess:(void (^)(AFHTTPRequestOperation *, id))success
+- (AFHTTPRequestOperation *)deleteSuccess:(void (^)(AFHTTPRequestOperation *, id))success
               failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
     NSString *urlString = self.endpointURL;
     if (self.server_id){
         urlString = [urlString stringByAppendingPathComponent:self.server_id.stringValue];
     }
-    [[self.class operationManager] DELETE:urlString parameters:nil success:success failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+    return [[self.class operationManager] DELETE:urlString parameters:nil success:success failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         if (failure) {
             failure(operation, error);
         }
