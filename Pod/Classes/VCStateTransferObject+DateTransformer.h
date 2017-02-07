@@ -10,4 +10,9 @@
 
 @interface VCStateTransferObject (DateTransformer)
 
++ (NSDateFormatter *)dateFormatter;
++ (NSValueTransformer *)updated_atJSONTransformer;
++ (NSValueTransformer *)created_atJSONTransformer;
++ (MTLValueTransformer *)transformerForDates;
+
 @end

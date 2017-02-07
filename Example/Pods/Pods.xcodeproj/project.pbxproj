@@ -169,8 +169,8 @@
 		BDA90F3DA7A9B87588DE468F0F4A31B6 /* Pods-Vacation_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C8ACE98245E80D5C63A660A93FC9B0 /* Pods-Vacation_Example-dummy.m */; };
 		BEFFE9FFE52E9A0833A7D2D8FB67EB4D /* EXPMatchers+beSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE8E92964947F5036A78870697BA21 /* EXPMatchers+beSubclassOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF9C7204B3CBAF9472B81E63CBC512F0 /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = A414657B65D71AC509C5DAE9DB42524A /* SPTExcludeGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0010E921E49E681008270AE /* VCStateTransferObject+DateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0010E901E49E681008270AE /* VCStateTransferObject+DateTransformer.h */; };
-		C0010E931E49E681008270AE /* VCStateTransferObject+DateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0010E911E49E681008270AE /* VCStateTransferObject+DateTransformer.m */; };
+		C0010E941E49EEC5008270AE /* VCStateTransferObject+DateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0010E911E49E681008270AE /* VCStateTransferObject+DateTransformer.m */; };
+		C0010E951E49EEC8008270AE /* VCStateTransferObject+DateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0010E901E49E681008270AE /* VCStateTransferObject+DateTransformer.h */; };
 		C087B9B3A493BC8232CBA4DB1CB47A67 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE935BCCC9AE6FB698026BBD92515097 /* AFNetworkReachabilityManager.m */; };
 		C19FF51B6E11AA180486CEFB5F3FC219 /* MTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C26306919E78045BC2993D223B179 /* MTLJSONAdapter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		C2334FA65FE838C1AEA97188A84EA792 /* MTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = FFEB795933CAED2476DA08BB7E79570D /* MTLJSONAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1227,7 +1227,6 @@
 				76C1FA68EFCD242119622AE2CEB4D24F /* AFURLResponseSerialization.h in Headers */,
 				DFC29AA19504EF95C8902348017273A8 /* AFURLSessionManager.h in Headers */,
 				56C8D4F00869E61F210A24E0EE8F3A13 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
-				C0010E921E49E681008270AE /* VCStateTransferObject+DateTransformer.h in Headers */,
 				CEDFE191DF66B8884828359B3494F8E9 /* UIAlertView+AFNetworking.h in Headers */,
 				401C2DDD1436B4AD6B3A43D775389EA4 /* UIButton+AFNetworking.h in Headers */,
 				76C72D9FA8C86EBBC7E3E4AF7F0B4BB5 /* UIImage+AFNetworking.h in Headers */,
@@ -1273,6 +1272,7 @@
 				73324956DC1BBDF5CEFE5480105AA026 /* Vacation.h in Headers */,
 				1A3758C4CB0B8C9CE512E287A4AEB65C /* VCFileWrapper.h in Headers */,
 				17E77D3951F146E4DB6951C58BA000C9 /* VCStateTransferObject+Archiving.h in Headers */,
+				C0010E951E49EEC8008270AE /* VCStateTransferObject+DateTransformer.h in Headers */,
 				37F24DAAAC45B8F5515F2E6984DEA302 /* VCStateTransferObject+CRUD.h in Headers */,
 				7C3BE79571C7BF40EA16279A072EEB40 /* VCStateTransferObject+FileUpload.h in Headers */,
 				4DA6A6B588883EA5DF6A3A3A009795AC /* VCStateTransferObject.h in Headers */,
@@ -1516,6 +1516,7 @@
 				A7CC8B593FFAAAA066FD9E00D467DD79 /* VCStateTransferObject+CRUD.m in Sources */,
 				9739D5011FDF2ADA65A17EBD2281C087 /* VCStateTransferObject+FileUpload.m in Sources */,
 				8026B879D068EC837C1F8E21FC11BB4D /* VCStateTransferObject.m in Sources */,
+				C0010E941E49EEC5008270AE /* VCStateTransferObject+DateTransformer.m in Sources */,
 				DE65C4EECAF0728880569EC4B37090AC /* VCWebService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1573,7 +1574,6 @@
 				C51B96A7E543F72CD7925968E35DC041 /* AFNetworking-dummy.m in Sources */,
 				C087B9B3A493BC8232CBA4DB1CB47A67 /* AFNetworkReachabilityManager.m in Sources */,
 				4E32C6B26518F18DC4AB3E225B86EE88 /* AFSecurityPolicy.m in Sources */,
-				C0010E931E49E681008270AE /* VCStateTransferObject+DateTransformer.m in Sources */,
 				C6CDABE1AEBB5DC4A35A6B221BB98D13 /* AFURLConnectionOperation.m in Sources */,
 				1389748BE24F9D2223187CB20D9A020C /* AFURLRequestSerialization.m in Sources */,
 				DB840EF5FD9645993A399CDE849E784C /* AFURLResponseSerialization.m in Sources */,

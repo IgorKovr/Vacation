@@ -13,9 +13,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSDictionary *dataStreamParams = @{@"start"    : @"2014-05-20T11:01:46Z",
-                                       @"stop"     : @"2014-07-20T11:01:46Z",
+    NSDictionary *dataStreamParams = @{@"start"    : @"2016-05-20T11:01:46Z",
+                                       @"stop"     : @"2016-07-20T11:01:46Z",
                                        @"interval" : @86400,
                                        @"limit"    : @100,
                                        @"function" : @"average"};

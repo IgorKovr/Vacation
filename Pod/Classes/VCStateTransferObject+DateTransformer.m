@@ -34,7 +34,7 @@
     return [self transformerForDates];
 }
 
-+ (MTLValueTransformer *)transformerForDates{
++ (MTLValueTransformer *)transformerForDates {
     static MTLValueTransformer *transformerForDates;
     if (!transformerForDates) {
         transformerForDates = [MTLValueTransformer transformerUsingForwardBlock:^id(NSString *dateString, BOOL *success, NSError *__autoreleasing *error) {

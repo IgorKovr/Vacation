@@ -13,9 +13,11 @@
 @implementation VCStateTransferObject (CRUD)
 
 - (AFHTTPRequestOperation *)getWithParams:(NSDictionary *)params
-              success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
-              failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    NSString *urlString = self.endpointURL;
+                                customURL:(NSString *)urlString
+                                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
+                                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    if (!urlString)
+        urlString = self.endpointURL;
     if (self.server_id){
         urlString = [urlString stringByAppendingPathComponent:self.server_id.stringValue];
     }
@@ -33,17 +35,69 @@
     } failure:failure];
 }
 
-- (AFHTTPRequestOperation *)updateWithParams:(NSDictionary *)params
-                 success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
-                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+- (AFHTTPRequestOperation *)getWithParams:(NSDictionary *)params
+              success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
+              failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    return [self getWithParams:params customURL:nil success:success failure:failure];
+}
+
+- (AFHTTPRequestOperation *)createWithParams:(NSDictionary *)params
+                                   customURL:(NSString *)urlString
+                                     success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
+                                     failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    if (!urlString)
+        urlString = self.endpointURL;
+    
     __weak VCStateTransferObject *weakSelf = self;
-    NSString *urlString = [self.endpointURL stringByAppendingPathComponent:self.server_id.stringValue];
+    
+    if (weakSelf.server_id)
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:[NSString stringWithFormat:@"Tried to create already existing object of class %@ with server_id: %@", self.class, self.server_id]
+                                     userInfo:nil];
     
     NSError *error;
     NSDictionary *allParams = [MTLJSONAdapter JSONDictionaryFromModel:self
-                                                   additionalParams:params
-                                                         removeNULL:YES
-                                                              error:error];
+                                                     additionalParams:params
+                                                           removeNULL:YES
+                                                                error:error];
+    if (error) {
+        if (failure) {
+            failure(nil, error);
+        }
+        [self handleStateTransferError:error];
+    }
+    return [[self.class operationManager] POST:urlString parameters:[allParams copy] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
+        if (!object){
+            failure(operation, error);
+            [self handleStateTransferError:error];
+        }
+        [weakSelf mergeValuesForKeysFromModel:object];
+        success(operation, responseObject);
+    } failure:failure];
+}
+
+- (AFHTTPRequestOperation *)createWithParams:(NSDictionary *)params
+                 success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
+                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    return [self createWithParams:params customURL:nil success:success failure:failure];
+}
+
+
+- (AFHTTPRequestOperation *)updateWithParams:(NSDictionary *)params
+                                   customURL:(NSString *)urlString
+                                     success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
+                                     failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    if (!urlString)
+        urlString = [self.endpointURL stringByAppendingPathComponent:self.server_id.stringValue];
+    
+    __weak VCStateTransferObject *weakSelf = self;
+    NSError *error;
+    NSDictionary *allParams = [MTLJSONAdapter JSONDictionaryFromModel:self
+                                                     additionalParams:params
+                                                           removeNULL:YES
+                                                                error:error];
     if (error) {
         if (failure) {
             failure(nil, error);
@@ -65,38 +119,10 @@
     } failure:failure];
 }
 
-- (AFHTTPRequestOperation *)createWithParams:(NSDictionary *)params
-                 success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
-                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    __weak VCStateTransferObject *weakSelf = self;
-    NSString *urlString = self.endpointURL;
-    
-    if (weakSelf.server_id)
-        @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                       reason:[NSString stringWithFormat:@"Tried to create already existing object of class %@ with server_id: %@", self.class, self.server_id]
-                                     userInfo:nil];
-    
-    NSError *error;
-    NSDictionary *allParams = [MTLJSONAdapter JSONDictionaryFromModel:self
-                                                   additionalParams:params
-                                                         removeNULL:YES
-                                                              error:error];
-    if (error) {
-        if (failure) {
-            failure(nil, error);
-        }
-        [self handleStateTransferError:error];
-    }
-    return [[self.class operationManager] POST:urlString parameters:[allParams copy] success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSError *error;
-        VCStateTransferObject  *object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:responseObject error:&error];
-        if (!object){
-            failure(operation, error);
-            [self handleStateTransferError:error];
-        }
-        [weakSelf mergeValuesForKeysFromModel:object];
-        success(operation, responseObject);
-    } failure:failure];
+- (AFHTTPRequestOperation *)updateWithParams:(NSDictionary *)params
+                                     success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
+                                     failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    return [self updateWithParams:params customURL:nil success:success failure:failure];
 }
 
 - (AFHTTPRequestOperation *)deleteSuccess:(void (^)(AFHTTPRequestOperation *, id))success
