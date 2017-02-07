@@ -169,6 +169,8 @@
 		BDA90F3DA7A9B87588DE468F0F4A31B6 /* Pods-Vacation_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C8ACE98245E80D5C63A660A93FC9B0 /* Pods-Vacation_Example-dummy.m */; };
 		BEFFE9FFE52E9A0833A7D2D8FB67EB4D /* EXPMatchers+beSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE8E92964947F5036A78870697BA21 /* EXPMatchers+beSubclassOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF9C7204B3CBAF9472B81E63CBC512F0 /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = A414657B65D71AC509C5DAE9DB42524A /* SPTExcludeGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0010E921E49E681008270AE /* VCStateTransferObject+DateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0010E901E49E681008270AE /* VCStateTransferObject+DateTransformer.h */; };
+		C0010E931E49E681008270AE /* VCStateTransferObject+DateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0010E911E49E681008270AE /* VCStateTransferObject+DateTransformer.m */; };
 		C087B9B3A493BC8232CBA4DB1CB47A67 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE935BCCC9AE6FB698026BBD92515097 /* AFNetworkReachabilityManager.m */; };
 		C19FF51B6E11AA180486CEFB5F3FC219 /* MTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C26306919E78045BC2993D223B179 /* MTLJSONAdapter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		C2334FA65FE838C1AEA97188A84EA792 /* MTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = FFEB795933CAED2476DA08BB7E79570D /* MTLJSONAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -499,6 +501,8 @@
 		BD04F3C16742E74F583278FC251B6D05 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		BE6343724A6A4492278CA861AC05AD6D /* EXPMatchers+beNil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beNil.m"; path = "Expecta/Matchers/EXPMatchers+beNil.m"; sourceTree = "<group>"; };
 		BE935BCCC9AE6FB698026BBD92515097 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		C0010E901E49E681008270AE /* VCStateTransferObject+DateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VCStateTransferObject+DateTransformer.h"; sourceTree = "<group>"; };
+		C0010E911E49E681008270AE /* VCStateTransferObject+DateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VCStateTransferObject+DateTransformer.m"; sourceTree = "<group>"; };
 		C079912D0FCED1EB30E26634191CAEC8 /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Specta.modulemap; sourceTree = "<group>"; };
 		C31A3FC73D5DE806DA476E186F385FB9 /* MTLModel+NSCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTLModel+NSCoding.h"; path = "Mantle/MTLModel+NSCoding.h"; sourceTree = "<group>"; };
 		C4068B5C8E2E4078BE1B8B26C2C700C9 /* EXPMatchers+contain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+contain.m"; path = "Expecta/Matchers/EXPMatchers+contain.m"; sourceTree = "<group>"; };
@@ -727,6 +731,8 @@
 				84EAD8B7A1AA4DFB0E9C6C1B467E8CE7 /* VCStateTransferObject+FileUpload.m */,
 				30AEC6BF4A28CB81203E25987E6DFC79 /* VCWebService.h */,
 				1C9EE683D5FE12B447D666D62A89939B /* VCWebService.m */,
+				C0010E901E49E681008270AE /* VCStateTransferObject+DateTransformer.h */,
+				C0010E911E49E681008270AE /* VCStateTransferObject+DateTransformer.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1221,6 +1227,7 @@
 				76C1FA68EFCD242119622AE2CEB4D24F /* AFURLResponseSerialization.h in Headers */,
 				DFC29AA19504EF95C8902348017273A8 /* AFURLSessionManager.h in Headers */,
 				56C8D4F00869E61F210A24E0EE8F3A13 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				C0010E921E49E681008270AE /* VCStateTransferObject+DateTransformer.h in Headers */,
 				CEDFE191DF66B8884828359B3494F8E9 /* UIAlertView+AFNetworking.h in Headers */,
 				401C2DDD1436B4AD6B3A43D775389EA4 /* UIButton+AFNetworking.h in Headers */,
 				76C72D9FA8C86EBBC7E3E4AF7F0B4BB5 /* UIImage+AFNetworking.h in Headers */,
@@ -1566,6 +1573,7 @@
 				C51B96A7E543F72CD7925968E35DC041 /* AFNetworking-dummy.m in Sources */,
 				C087B9B3A493BC8232CBA4DB1CB47A67 /* AFNetworkReachabilityManager.m in Sources */,
 				4E32C6B26518F18DC4AB3E225B86EE88 /* AFSecurityPolicy.m in Sources */,
+				C0010E931E49E681008270AE /* VCStateTransferObject+DateTransformer.m in Sources */,
 				C6CDABE1AEBB5DC4A35A6B221BB98D13 /* AFURLConnectionOperation.m in Sources */,
 				1389748BE24F9D2223187CB20D9A020C /* AFURLRequestSerialization.m in Sources */,
 				DB840EF5FD9645993A399CDE849E784C /* AFURLResponseSerialization.m in Sources */,
