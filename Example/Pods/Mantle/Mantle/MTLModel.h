@@ -78,7 +78,7 @@ typedef enum : NSUInteger {
 
 /// Merges the value of the given key on the receiver with the value of the same
 /// key from the given model object, giving precedence to the other model object.
-- (void)mergeValueForKey:(NSString *)key fromModel:(id<MTLModel>)model;
+- (void)mergeValueForKey:(NSString *)key fromModel:(id<MTLModel>)model ;
 
 /// Returns the keys for all @property declarations, except for `readonly`
 /// properties without ivars, or properties on MTLModel itself.

@@ -14,6 +14,7 @@
 
 - (AFHTTPRequestOperation *)getWithParams:(NSDictionary *)params
                                 customURL:(NSString *)urlString
+                         acceptNULLValues:(BOOL)acceptNULL
                                   success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     if (!urlString)
@@ -29,7 +30,7 @@
             failure(operation, error);
             [self handleStateTransferError:error];
         }
-        [weakSelf mergeValuesForKeysFromModel:object];
+        [weakSelf mergeValuesForKeysFromModel:object acceptNULL:acceptNULL];
         if (success)
             success(operation, responseObject);
     } failure:failure];
@@ -38,11 +39,12 @@
 - (AFHTTPRequestOperation *)getWithParams:(NSDictionary *)params
               success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    return [self getWithParams:params customURL:nil success:success failure:failure];
+    return [self getWithParams:params customURL:nil acceptNULLValues:false success:success failure:failure];
 }
 
 - (AFHTTPRequestOperation *)createWithParams:(NSDictionary *)params
                                    customURL:(NSString *)urlString
+                            acceptNULLValues:(BOOL)acceptNULL
                                      success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     if (!urlString)
@@ -69,7 +71,7 @@
             failure(operation, error);
             [self handleStateTransferError:error];
         }
-        [weakSelf mergeValuesForKeysFromModel:object];
+        [weakSelf mergeValuesForKeysFromModel:object acceptNULL:acceptNULL];
         success(operation, responseObject);
     } failure:failure];
 }
@@ -77,12 +79,13 @@
 - (AFHTTPRequestOperation *)createWithParams:(NSDictionary *)params
                  success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    return [self createWithParams:params customURL:nil success:success failure:failure];
+    return [self createWithParams:params customURL:nil acceptNULLValues:false success:success failure:failure];
 }
 
 
 - (AFHTTPRequestOperation *)updateWithParams:(NSDictionary *)params
                                    customURL:(NSString *)urlString
+                            acceptNULLValues:(BOOL)acceptNULL
                                      success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     if (!urlString)
@@ -110,7 +113,7 @@
             }
             [self handleStateTransferError:error];
         }
-        [weakSelf mergeValuesForKeysFromModel:object];
+        [weakSelf mergeValuesForKeysFromModel:object acceptNULL:acceptNULL];
         success(operation, responseObject);
     } failure:failure];
 }
@@ -118,7 +121,7 @@
 - (AFHTTPRequestOperation *)updateWithParams:(NSDictionary *)params
                                      success:(void (^)(AFHTTPRequestOperation *operation, id responce))success
                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    return [self updateWithParams:params customURL:nil success:success failure:failure];
+    return [self updateWithParams:params customURL:nil acceptNULLValues:false success:success failure:failure];
 }
 
 - (AFHTTPRequestOperation *)deleteSuccess:(void (^)(AFHTTPRequestOperation *, id))success

@@ -76,4 +76,11 @@
  */
 - (void)handleStateTransferError:(NSError *)error;
 
+/*! Merges the values of the given model object into the receiver, using
+    -mergeValueForKey:fromModel:acceptNULL: for each key in +propertyKeys.
+    `model` must be an instance of the receiver's class or a subclass thereof.
+     acceptNULL if true - rewrites parameters that are NULL in given model
+ */
+- (void)mergeValuesForKeysFromModel:(id<MTLModel>)model acceptNULL:(BOOL)acceptNULL;
+
 @end

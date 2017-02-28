@@ -60,17 +60,17 @@
  @abstract overrides MTLModel -mergeValueForKey to ignore nill values from the incomming model
  @abstract ovveride this method in your model to accept nill values from model
  */
-- (void)mergeValueForKey:(NSString *)key fromModel:(NSObject<MTLModel> *)model {
+- (void)mergeValueForKey:(NSString *)key fromModel:(NSObject<MTLModel> *)model acceptNULL:(BOOL)acceptNULL {
     NSParameterAssert(key != nil);
-    
     SEL selector = MTLSelectorWithCapitalizedKeyPattern("merge", key, "FromModel:");
     if (![self respondsToSelector:selector]) {
         if (model != nil) {
             id value = [model valueForKey:key];
-            // Remove this lines to accept nill values from model
-            if (value != (id)[NSNull null] && value != nil)
-                [self setValue:value forKey:key];
-            //
+            if (value != nil) {
+                if (value != (id)[NSNull null] || acceptNULL){
+                    [self setValue:value forKey:key];
+                }
+            }
         }
         return;
     }
@@ -80,13 +80,11 @@
     function(self, selector, model);
 }
 
-- (void)mergeValuesForKeysFromModel:(id<MTLModel>)model {
+- (void)mergeValuesForKeysFromModel:(id<MTLModel>)model acceptNULL:(BOOL)acceptNULL{
     NSSet *propertyKeys = model.class.propertyKeys;
-    
     for (NSString *key in self.class.propertyKeys) {
         if (![propertyKeys containsObject:key]) continue;
-        
-        [self mergeValueForKey:key fromModel:model];
+        [self mergeValueForKey:key fromModel:model acceptNULL:acceptNULL];
     }
 }
 
@@ -105,4 +103,3 @@
 
 
 @end
-
