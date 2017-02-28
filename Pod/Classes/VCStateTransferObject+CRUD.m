@@ -50,10 +50,6 @@
     
     __weak VCStateTransferObject *weakSelf = self;
     
-    if (weakSelf.server_id)
-        @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                       reason:[NSString stringWithFormat:@"Tried to create already existing object of class %@ with server_id: %@", self.class, self.server_id]
-                                     userInfo:nil];
     
     NSError *error;
     NSDictionary *allParams = [MTLJSONAdapter JSONDictionaryFromModel:self
