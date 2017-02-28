@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Vacation"
-  s.version          = "1.8.1"
+  s.version          = "2.0"
   s.summary          = "An easy to use Model State Transfer Framework for iOS"
 
 # This description is used to generate tags and improve search results.
