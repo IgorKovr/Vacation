@@ -70,6 +70,16 @@
  returns nil by default
  */
 - (NSArray *)filterParametersKeys;
+    
+/*!
+ Specifies dateFormat which is used in -transformerForDates method.
+ 
+ Default value is "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+ 
+ Override this method to change dateFormat in -transformerForDates for current class
+ 
+ */
++ (NSString *)dateFormatString;
 
 /*!
  Override this method if you want to to handle StateTransfer Errors

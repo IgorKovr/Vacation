@@ -39,6 +39,10 @@
 - (void)handleStateTransferError:(NSError *)error {
     NSLog(@"State transfer Error: %@", error.localizedDescription);
 }
+    
++ (NSString *)dateFormatString {
+    return @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+}
 
 #pragma mark - Overriding MTLModel methods
 
